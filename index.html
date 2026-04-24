@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<img src="cv_picture2.png">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yahor | Portfolio</title>
+<title>Egor | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -15,27 +16,26 @@ html {
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: #0f172a;
+    background: linear-gradient(135deg, #0f172a, #020617);
     color: #e2e8f0;
 }
 
+/* NAV */
 nav {
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     padding: 15px;
-    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.6);
 }
 
 nav a {
-    color: #e2e8f0;
     margin: 0 15px;
+    color: #e2e8f0;
     text-decoration: none;
-    font-weight: 500;
     transition: 0.3s;
 }
 
@@ -43,23 +43,38 @@ nav a:hover {
     color: #38bdf8;
 }
 
+/* HERO */
 header {
     height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+.hero {
     text-align: center;
 }
 
-header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #38bdf8;
+    box-shadow: 0 0 30px rgba(56,189,248,0.6);
+    margin-bottom: 20px;
 }
 
-header p {
+h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+}
+
+.subtitle {
     color: #94a3b8;
 }
 
+/* SECTIONS */
 section {
     padding: 80px 20px;
     max-width: 900px;
@@ -68,21 +83,24 @@ section {
 
 h2 {
     margin-bottom: 20px;
-    font-weight: 600;
 }
 
+/* CARDS */
 .card {
-    background: #1e293b;
+    background: rgba(30, 41, 59, 0.6);
     padding: 20px;
     border-radius: 15px;
+    backdrop-filter: blur(10px);
     margin-bottom: 20px;
-    transition: transform 0.3s;
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
+/* SKILLS */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -90,27 +108,34 @@ h2 {
 }
 
 .skill {
-    background: #334155;
+    background: #1e293b;
     padding: 10px 15px;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
-footer {
-    text-align: center;
-    padding: 40px;
-    color: #64748b;
+.skill:hover {
+    background: #38bdf8;
+    color: black;
 }
 
-/* Анимации */
+/* ANIMATIONS */
 .hidden {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
+    transform: translateY(40px);
+    transition: all 0.7s ease;
 }
 
 .show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #64748b;
 }
 </style>
 </head>
@@ -125,9 +150,12 @@ footer {
 </nav>
 
 <header>
-    <div class="hidden">
+    <div class="hero hidden">
+        <!-- ВАЖНО: замени на своё фото -->
+        <img src="me.jpg" class="avatar">
+
         <h1>Egor</h1>
-        <p>Junior Developer / Designer</p>
+        <p class="subtitle">Junior Developer / Designer</p>
     </div>
 </header>
 
@@ -135,8 +163,7 @@ footer {
     <h2>About Me</h2>
     <div class="card">
         <p>
-            I am a student and aspiring developer with experience in Android development,
-            design, and data analysis. Passionate about creating modern digital products.
+            I am a developer passionate about Android, design, and modern technologies.
         </p>
     </div>
 </section>
@@ -158,12 +185,12 @@ footer {
 
     <div class="card">
         <h3>Android App</h3>
-        <p>Simple mobile app using Kotlin and XML layouts.</p>
+        <p>Mobile app built with Kotlin</p>
     </div>
 
     <div class="card">
         <h3>Design Portfolio</h3>
-        <p>UI/UX projects created in Figma and Adobe tools.</p>
+        <p>UI/UX projects created in Figma</p>
     </div>
 
 </section>
@@ -172,12 +199,12 @@ footer {
     <h2>Contact</h2>
     <div class="card">
         <p>Email: your@email.com</p>
-        <p>GitHub: github.com/username</p>
+        <p>GitHub: github.com/KhoruzhauYahor</p>
     </div>
 </section>
 
 <footer>
-    © 2026 Yahor Khoruzhau
+    © 2026 Egor
 </footer>
 
 <script>
