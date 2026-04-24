@@ -19,6 +19,13 @@ body {
     z-index: -3;
 }
 
+.pretitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
 @keyframes gradientMove {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
@@ -117,21 +124,24 @@ header {
 }
 
 h1 {
-    font-size: 5.2rem;
+    font-size: 5.8rem;
     margin: 0;
     font-weight: 700;
+    letter-spacing: -1px;
 }
 
 .typing {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     color: #ddd6fe;
-    min-height: 50px;
+    min-height: 60px;
+    margin-top: 10px;
 }
 
 .hero-right p {
-    font-size: 1.25rem;
-    max-width: 540px;
+    font-size: 1.35rem;
+    max-width: 560px;
     line-height: 1.6;
+    opacity: 0.9;
 }
 
 /* BUTTONS */
@@ -141,12 +151,9 @@ h1 {
 
 .btn {
     display: inline-block;
-    padding: 16px 24px;
-    border-radius: 14px;
-    background: linear-gradient(45deg, #818cf8, #c084fc);
-    color: white;
-    text-decoration: none;
-    margin-right: 10px;
+    padding: 18px 28px;
+    border-radius: 16px;
+    font-size: 1.05rem;
 }
 
 .btn.secondary {
@@ -154,8 +161,14 @@ h1 {
 }
 
 /* ICONS */
-.icons {
-    margin-top: 10px;
+.icons a {
+    font-size: 2rem;
+    margin-right: 14px;
+    transition: 0.3s;
+}
+
+.icons a:hover {
+    transform: translateY(-3px);
 }
 
 /* SECTIONS */
