@@ -9,22 +9,15 @@ body {
     overflow-x: hidden;
 }
 
-/* BACKGROUND */
 .background {
     position: fixed;
     inset: 0;
     background: linear-gradient(120deg, #6366f1, #a855f7, #60a5fa);
-    background-size: 250% 250%;
-    animation: gradientMove 6s ease infinite;
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
     z-index: -3;
 }
 
-.pretitle {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-}
 
 @keyframes gradientMove {
     0% {background-position: 0% 50%;}
@@ -35,37 +28,26 @@ body {
 /* BLOBS */
 .blob {
     position: fixed;
-    width: 700px;
-    height: 700px;
-    background: rgba(255, 255, 255, 0.14);
+    width: 520px;
+    height: 520px;
+    background: rgba(255,255,255,0.08);
     border-radius: 50%;
-    filter: blur(140px);
+    filter: blur(110px);
     z-index: -2;
-    opacity: 0.9;
 }
 
-.blob1 {
-    top: -15%;
-    left: -15%;
-    background: rgba(168, 85, 247, 0.22);
-}
+.blob1 { top: 5%; left: 5%; }
+.blob2 { bottom: 5%; right: 5%; }
 
-.blob2 {
-    bottom: -15%;
-    right: -15%;
-    background: rgba(96, 165, 250, 0.22);
-}
-
-/* NAV */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 18px;
-    backdrop-filter: blur(20px);
-    background: rgba(255,255,255,0.06);
+    padding: 22px;
+    backdrop-filter: blur(18px);
+    background: rgba(255,255,255,0.08);
     z-index: 1000;
 }
 
@@ -73,6 +55,7 @@ nav a {
     margin: 0 18px;
     color: white;
     text-decoration: none;
+    font-weight: 500;
 }
 
 /* HERO */
@@ -81,123 +64,92 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 80px;
+    padding-top: 90px;
 }
 
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 80px;
+    gap: 50px;
     max-width: 1100px;
     width: 100%;
     padding: 20px;
 }
 
-/* AVATAR */
+/* LEFT */
 .hero-left {
     flex: 1;
     display: flex;
     justify-content: center;
-}
-
-.avatar-wrapper {
-    position: relative;
-    width: 360px;
-    height: 360px;
-}
-
-/* OUTER GLOW */
-.avatar-wrapper::before {
-    content: "";
-    position: absolute;
-    inset: -35px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(168,85,247,0.6), transparent 70%);
-    filter: blur(35px);
-    z-index: -1;
+    align-items: center;
 }
 
 .avatar {
-    width: 100%;
-    height: 100%;
+    width: clamp(220px, 30vw, 340px);
+    height: clamp(220px, 30vw, 340px);
     border-radius: 50%;
     object-fit: cover;
+    object-position: center;
 }
 
-/* TEXT */
+/* RIGHT */
 .hero-right {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
 }
 
 h1 {
-    font-size: 5.8rem;
+    font-size: 4rem;
     margin: 0;
-    font-weight: 700;
-    letter-spacing: -1px;
 }
 
 .typing {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     color: #ddd6fe;
-    min-height: 60px;
+    min-height: 40px;
     margin-top: 10px;
 }
 
 .hero-right p {
-    font-size: 1.35rem;
-    max-width: 560px;
-    line-height: 1.6;
+    font-size: 1.1rem;
     opacity: 0.9;
+    max-width: 500px;
 }
 
 /* BUTTONS */
-.buttons {
-    margin-top: 10px;
-}
-
 .btn {
     display: inline-block;
-    padding: 18px 28px;
-    border-radius: 16px;
-    font-size: 1.05rem;
+    padding: 14px 22px;
+    margin: 14px 10px 0 0;
+    border-radius: 14px;
+    background: linear-gradient(45deg, #818cf8, #c084fc);
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-.btn.secondary {
-    background: rgba(255,255,255,0.1);
+.btn:hover {
+    transform: scale(1.05);
 }
 
 /* ICONS */
 .icons a {
-    font-size: 2.4rem;
-    margin-right: 16px;
-    transition: 0.25s ease;
-    display: inline-block;
-}
-
-.icons a:hover {
-    transform: translateY(-4px) scale(1.1);
+    margin-right: 12px;
+    font-size: 1.6rem;
 }
 
 /* SECTIONS */
 section {
-    padding: 120px 20px;
+    padding: 100px 20px;
     max-width: 1000px;
     margin: auto;
-}
-
-h2 {
-    font-size: 2.6rem;
 }
 
 .card {
     background: rgba(255,255,255,0.08);
     padding: 22px;
     border-radius: 18px;
-    backdrop-filter: blur(20px);
+    margin-bottom: 18px;
 }
 
 /* SKILLS */
@@ -213,25 +165,30 @@ h2 {
     border-radius: 10px;
 }
 
-/* MOBILE */
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 50px;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
+
     .hero {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
-    }
-
-    h1 {
-        font-size: 3.2rem;
-    }
-
-    .avatar-wrapper {
-        width: 240px;
-        height: 240px;
     }
 
     .hero-right p {
         max-width: 90%;
         margin: auto;
+    }
+
+    nav {
+        padding: 14px;
+    }
+
+    h1 {
+        font-size: 3rem;
     }
 }
