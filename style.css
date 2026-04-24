@@ -9,7 +9,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== BACKGROUND (FASTER + MORE DYNAMIC) ===== */
 .background {
     position: fixed;
     inset: 0;
