@@ -126,10 +126,10 @@ h1 {
     margin-top: 12px;
 }
 
-.hero-right p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    max-width: 500px;
+@media (max-width: 768px) {
+    .hero-right p {
+        max-width: 90%;
+    }
 }
 
 .btn {
