@@ -108,7 +108,7 @@ header {
     height: 340px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center top; 
+    object-position: 50% 30%;
     border: 4px solid rgba(255,255,255,0.35);
     backdrop-filter: blur(10px);
 }
