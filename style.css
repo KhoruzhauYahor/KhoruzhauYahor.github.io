@@ -93,9 +93,7 @@ header {
 
 /* BIGGER AVATAR */
 .hero-left {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 .hero-right {
@@ -108,9 +106,11 @@ header {
     height: 340px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: 50% 30%;
-    border: 4px solid rgba(255,255,255,0.35);
-    backdrop-filter: blur(10px);
+    object-position: center; /* важно */
+}
+
+* {
+    box-sizing: border-box;
 }
 
 h1 {
