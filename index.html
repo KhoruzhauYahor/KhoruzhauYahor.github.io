@@ -16,71 +16,68 @@
 <div class="blob blob2"></div>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
+    <div class="nav-left">YK</div>
+
+    <div class="nav-center">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="#">Contact</a>
+    </div>
 </nav>
 
 <header>
-    <div class="hero">
+<div class="hero hidden">
 
-        <div class="hero-left">
-            <img src="picture4.png" class="avatar" alt="avatar">
-        </div>
-
-        <div class="hero-right">
-            <h1>Egor</h1>
-            <div class="typing" id="typing"></div>
-
-            <p>
-                Data Analyst focused on turning raw data into actionable insights through SQL, Power BI and visualization.
-            </p>
-
-            <div>
-                <a href="#" class="btn">Download CV</a>
-                <a href="#projects" class="btn">Projects</a>
-            </div>
-
-            <div class="icons">
-                <a href="https://github.com/KhoruzhauYahor">🐙</a>
-                <a href="#">💼</a>
-                <a href="#">📊</a>
-            </div>
-        </div>
-
+    <div class="hero-left">
+        <img src="cv_picture2.png" class="avatar">
     </div>
+
+    <div class="hero-right">
+        <div class="small-title">HELLO, I'M</div>
+        <h1>Egor</h1>
+
+        <div class="typing" id="typing"></div>
+
+        <div class="description">
+            Data Analyst focused on transforming raw data into insights using SQL, Power BI and visualization.
+        </div>
+
+        <a href="#" class="btn">Download CV</a>
+        <a href="#projects" class="btn">Projects</a>
+
+        <div class="icons">
+            <a href="https://github.com/KhoruzhauYahor">🐙</a>
+            <a href="#">💼</a>
+            <a href="#">📊</a>
+        </div>
+    </div>
+
+</div>
 </header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        <p>Aspiring Data Analyst with skills in SQL, Power BI and data visualization.</p>
-    </div>
+<section id="about" class="hidden">
+<h2>About Me</h2>
+<div class="card">Aspiring Data Analyst with SQL, Power BI and data visualization skills.</div>
 </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-        <div class="skill">SQL</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Excel</div>
-        <div class="skill">Python</div>
-        <div class="skill">Data Visualization</div>
-    </div>
+<section id="skills" class="hidden">
+<h2>Skills</h2>
+<div class="skills">
+<div class="skill">SQL</div>
+<div class="skill">Power BI</div>
+<div class="skill">Python</div>
+<div class="skill">Excel</div>
+</div>
 </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-
-    <div class="card">
-        <h3>Sales Dashboard</h3>
-        <p>Interactive dashboard built in Power BI</p>
-    </div>
-
-    <div class="card">
-        <h3>SQL Analysis</h3>
-        <p>Database analysis and reporting</p>
-    </div>
+<section id="projects" class="hidden">
+<h2>Projects</h2>
+<div class="card">Sales Dashboard - Power BI</div>
+<div class="card">SQL Data Analysis</div>
 </section>
 
 <footer>© 2026 Egor</footer>
@@ -95,24 +92,22 @@ function type() {
 
     if (!isDeleting) {
         el.textContent = current.substring(0, j++);
-        if (j > current.length) {
-            isDeleting = true;
-            setTimeout(type, 1000);
-            return;
-        }
+        if (j > current.length) { isDeleting = true; setTimeout(type, 1000); return; }
     } else {
         el.textContent = current.substring(0, j--);
-        if (j === 0) {
-            isDeleting = false;
-            i = (i + 1) % text.length;
-        }
+        if (j === 0) { isDeleting = false; i = (i + 1) % text.length; }
     }
-
     setTimeout(type, isDeleting ? 40 : 80);
 }
 
 type();
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+});
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 </script>
 
 </body>
 </html>
+
