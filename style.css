@@ -9,6 +9,7 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== BACKGROUND ===== */
 .background {
     position: fixed;
     inset: 0;
@@ -24,7 +25,7 @@ body {
     100% {background-position: 0% 50%;}
 }
 
-/* ===== PARALLAX BLOBS ===== */
+/* ===== BLOBS ===== */
 .blob {
     position: fixed;
     width: 600px;
@@ -33,46 +34,51 @@ body {
     border-radius: 50%;
     filter: blur(120px);
     z-index: -2;
-    transform: translateZ(0);
+    transition: transform 0.2s ease-out;
 }
 
-.blob1 {
-    top: -10%;
-    left: -10%;
+.blob1 { top: -10%; left: -10%; }
+.blob2 { bottom: -10%; right: -10%; }
+
+/* ===== CURSOR GLOW ===== */
+.cursor-glow {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,85,247,0.35), transparent 70%);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    filter: blur(20px);
 }
 
-.blob2 {
-    bottom: -10%;
-    right: -10%;
-}
-
-/* ===== NAV ===== */
-nav {
+/* ===== GLASS NAV ===== */
+.glass-nav {
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 20px;
-    backdrop-filter: blur(20px);
+    padding: 18px;
     background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     z-index: 1000;
 }
 
-nav a {
+.glass-nav a {
     margin: 0 18px;
     color: white;
     text-decoration: none;
-    font-weight: 500;
 }
 
-/* ===== HERO (LESS EMPTY SPACE) ===== */
+/* ===== HERO ===== */
 header {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 80px;
 }
 
 .hero {
@@ -85,13 +91,7 @@ header {
     padding: 20px;
 }
 
-/* ===== AVATAR WITH GLOW ===== */
-.hero-left {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
+/* ===== AVATAR GLOW ===== */
 .avatar-wrapper {
     position: relative;
     width: 340px;
@@ -101,11 +101,10 @@ header {
 .avatar-wrapper::before {
     content: "";
     position: absolute;
-    inset: -20px;
+    inset: -25px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(168,85,247,0.6), transparent 70%);
-    filter: blur(20px);
-    z-index: -1;
+    filter: blur(25px);
 }
 
 .avatar {
@@ -115,62 +114,36 @@ header {
     object-fit: cover;
 }
 
-/* ===== RIGHT SIDE ===== */
-.hero-right {
-    flex: 1;
-}
-
+/* ===== TEXT ===== */
 h1 {
     font-size: 5rem;
     margin: 0;
-    letter-spacing: -1px;
 }
 
 .typing {
     font-size: 2rem;
     color: #ddd6fe;
     min-height: 50px;
-    margin-top: 10px;
 }
 
 .hero-right p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     max-width: 520px;
-    opacity: 0.9;
 }
 
 /* ===== BUTTONS ===== */
-.cta {
-    margin-top: 20px;
-}
-
 .btn {
     display: inline-block;
-    padding: 14px 24px;
+    padding: 14px 22px;
     margin-right: 10px;
     border-radius: 14px;
     background: linear-gradient(45deg, #818cf8, #c084fc);
     color: white;
     text-decoration: none;
-    transition: 0.3s;
 }
 
 .btn.secondary {
     background: rgba(255,255,255,0.1);
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* ===== ICONS ===== */
-.icons {
-    margin-top: 15px;
-}
-
-.icons a {
-    margin-right: 12px;
-    font-size: 1.6rem;
 }
 
 /* ===== SECTIONS ===== */
@@ -180,52 +153,22 @@ section {
     margin: auto;
 }
 
-h2 {
-    font-size: 2.6rem;
-}
-
 .card {
     background: rgba(255,255,255,0.08);
     padding: 22px;
     border-radius: 18px;
-    margin-bottom: 18px;
     backdrop-filter: blur(20px);
-}
-
-/* ===== SKILLS ===== */
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.skill {
-    padding: 10px 14px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 50px;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-
     .hero {
         flex-direction: column;
         text-align: center;
     }
 
     h1 {
-        font-size: 3.2rem;
-    }
-
-    .hero-right p {
-        max-width: 90%;
-        margin: auto;
+        font-size: 3rem;
     }
 
     .avatar-wrapper {
