@@ -83,6 +83,9 @@ header {
     .hero {
         flex-direction: column;
         text-align: center;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
     }
 }
 
@@ -91,15 +94,7 @@ header {
     flex: 1;
     display: flex;
     justify-content: center;
-}
-
-.hero-right {
-    flex: 1;
-}
-
-/* BIGGER AVATAR */
-.hero-left {
-    text-align: center;
+    align-items: center;
 }
 
 .hero-right {
@@ -108,11 +103,11 @@ header {
 
 /* BIGGER AVATAR */
 .avatar {
-    width: 340px;
-    height: 340px;
+    width: clamp(220px, 30vw, 340px);
+    height: clamp(220px, 30vw, 340px);
     border-radius: 50%;
     object-fit: cover;
-    object-position: center; /* важно */
+    object-position: center;
 }
 
 * {
