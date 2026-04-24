@@ -39,7 +39,6 @@ body {
 .blob1 { top: 5%; left: 5%; }
 .blob2 { bottom: 5%; right: 5%; }
 
-/* NAV */
 nav {
     position: fixed;
     top: 0;
