@@ -17,15 +17,14 @@ body {
     overflow-x: hidden;
 }
 
-/* 🔥 Градиент фон */
+/* BACKGROUND */
 .background {
     position: fixed;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: linear-gradient(120deg, #6366f1, #a855f7, #60a5fa);
     background-size: 300% 300%;
     animation: gradientMove 12s ease infinite;
-    z-index: -2;
+    z-index: -3;
 }
 
 @keyframes gradientMove {
@@ -34,29 +33,32 @@ body {
     100% {background-position: 0% 50%;}
 }
 
-/* 🔥 Parallax blobs */
+/* BLOBS */
 .blob {
     position: fixed;
-    width: 400px;
-    height: 400px;
-    background: rgba(255,255,255,0.1);
+    width: 420px;
+    height: 420px;
+    background: rgba(255,255,255,0.08);
     border-radius: 50%;
-    filter: blur(80px);
-    z-index: -1;
+    filter: blur(90px);
+    z-index: -2;
 }
 
 .blob1 { top: 10%; left: 10%; }
 .blob2 { bottom: 10%; right: 10%; }
 
-/* NAV */
+/* NAV - FIXED + GLASS */
 nav {
     position: fixed;
+    top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 15px;
-    backdrop-filter: blur(12px);
-    background: rgba(255,255,255,0.05);
+    padding: 18px;
+    backdrop-filter: blur(16px);
+    background: rgba(255,255,255,0.06);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 nav a {
@@ -64,50 +66,93 @@ nav a {
     color: white;
     text-decoration: none;
     transition: 0.3s;
+    font-weight: 500;
 }
 
-nav a:hover {
-    color: #c4b5fd;
-}
+nav a:hover { color: #c4b5fd; }
 
 /* HERO */
 header {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding-top: 80px;
 }
 
 .hero {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 40px;
 }
 
-/* Avatar */
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-right {
+    flex: 1;
+}
+
+/* AVATAR BIGGER */
 .avatar {
-    width: 140px;
-    height: 140px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(255,255,255,0.4);
+    border: 3px solid rgba(255,255,255,0.3);
     backdrop-filter: blur(10px);
-    margin-bottom: 20px;
 }
 
-/* Typing */
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
 .typing {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #ddd6fe;
     min-height: 30px;
+    margin-top: 10px;
 }
 
-/* Sections */
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    margin: 10px 8px 0 0;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #818cf8, #c084fc);
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.icons a {
+    margin-right: 12px;
+    font-size: 1.4rem;
+    color: white;
+}
+
+.icons a:hover { color: #c4b5fd; }
+
+/* SECTIONS */
 section {
     padding: 80px 20px;
     max-width: 900px;
     margin: auto;
 }
 
-/* Frosted glass cards */
 .card {
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.15);
@@ -120,10 +165,8 @@ section {
 
 .card:hover {
     transform: translateY(-8px);
-    background: rgba(255,255,255,0.12);
 }
 
-/* Skills */
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -131,51 +174,17 @@ section {
 }
 
 .skill {
-    padding: 10px 15px;
+    padding: 10px 14px;
     border-radius: 10px;
     background: rgba(255,255,255,0.1);
-    transition: 0.3s;
 }
 
-.skill:hover {
-    background: #c4b5fd;
-    color: black;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 10px;
-    background: linear-gradient(45deg, #818cf8, #c084fc);
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* Icons */
-.icons a {
-    margin: 0 10px;
-    font-size: 1.5rem;
-    color: white;
-    transition: 0.3s;
-}
-
-.icons a:hover {
-    color: #c4b5fd;
-}
-
-/* Animation */
 .hidden {
     opacity: 0;
     transform: translateY(40px);
     transition: 0.8s;
 }
+
 .show {
     opacity: 1;
     transform: translateY(0);
@@ -184,6 +193,17 @@ section {
 footer {
     text-align: center;
     padding: 40px;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-left {
+        margin-bottom: 20px;
+    }
 }
 </style>
 </head>
@@ -202,31 +222,34 @@ footer {
 
 <header>
 <div class="hero hidden">
-    <img src="cv_picture2.png" class="avatar">
 
-    <h1>Egor</h1>
-    <div class="typing" id="typing"></div>
-
-    <div>
-        <a href="#" class="btn">Download CV</a>
-        <a href="#projects" class="btn">Projects</a>
+    <div class="hero-left">
+        <img src="cv_picture2.png" class="avatar">
     </div>
 
-    <div class="icons">
-        <a href="https://github.com/KhoruzhauYahor">🐙</a>
-        <a href="#">💼</a>
-        <a href="#">📊</a>
+    <div class="hero-right">
+        <h1>Egor</h1>
+        <div class="typing" id="typing"></div>
+
+        <div>
+            <a href="#" class="btn">Download CV</a>
+            <a href="#projects" class="btn">Projects</a>
+        </div>
+
+        <div class="icons">
+            <a href="https://github.com/KhoruzhauYahor">🐙</a>
+            <a href="#">💼</a>
+            <a href="#">📊</a>
+        </div>
     </div>
+
 </div>
 </header>
 
 <section id="about" class="hidden">
 <h2>About Me</h2>
 <div class="card">
-<p>
-Aspiring Data Analyst with skills in SQL, Power BI and data visualization.
-I enjoy transforming data into meaningful insights.
-</p>
+<p>Aspiring Data Analyst with skills in SQL, Power BI and data visualization.</p>
 </div>
 </section>
 
@@ -243,68 +266,54 @@ I enjoy transforming data into meaningful insights.
 
 <section id="projects" class="hidden">
 <h2>Projects</h2>
-
 <div class="card">
 <h3>Sales Dashboard</h3>
 <p>Interactive dashboard built in Power BI</p>
 </div>
-
 <div class="card">
 <h3>SQL Analysis</h3>
 <p>Database analysis and reporting</p>
 </div>
-
 </section>
 
-<footer>
-© 2026 Egor
-</footer>
+<footer>© 2026 Egor</footer>
 
 <script>
-/* Typing effect */
 const text = ["Data Analyst", "SQL & Power BI", "Turning data into insights"];
-let i = 0, j = 0, current = "", isDeleting = false;
+let i = 0, j = 0, isDeleting = false;
 
 function type() {
-    current = text[i];
-    
+    const el = document.getElementById("typing");
+    const current = text[i];
+
     if (!isDeleting) {
-        document.getElementById("typing").textContent = current.substring(0, j++);
+        el.textContent = current.substring(0, j++);
         if (j > current.length) {
             isDeleting = true;
             setTimeout(type, 1000);
             return;
         }
     } else {
-        document.getElementById("typing").textContent = current.substring(0, j--);
-        if (j == 0) {
+        el.textContent = current.substring(0, j--);
+        if (j === 0) {
             isDeleting = false;
             i = (i + 1) % text.length;
         }
     }
+
     setTimeout(type, isDeleting ? 40 : 80);
 }
 
 type();
 
-/* Scroll animation */
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
+    entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("show");
     });
 });
+
 document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 
-/* Parallax */
-document.addEventListener("mousemove", e => {
-    document.querySelector(".blob1").style.transform =
-        `translate(${e.clientX * 0.02}px, ${e.clientY * 0.02}px)`;
-
-    document.querySelector(".blob2").style.transform =
-        `translate(${e.clientX * -0.02}px, ${e.clientY * -0.02}px)`;
-});
 </script>
 
 </body>
