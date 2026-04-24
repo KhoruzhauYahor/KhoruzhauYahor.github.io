@@ -1,5 +1,6 @@
-
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -8,6 +9,7 @@ body {
     overflow-x: hidden;
 }
 
+/* BACKGROUND */
 .background {
     position: fixed;
     inset: 0;
@@ -37,59 +39,46 @@ body {
 .blob1 { top: 5%; left: 5%; }
 .blob2 { bottom: 5%; right: 5%; }
 
-/* NAV - BIGGER HEADER */
+/* NAV */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 26px;
+    padding: 22px;
     backdrop-filter: blur(18px);
     background: rgba(255,255,255,0.08);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 nav a {
-    margin: 0 22px;
+    margin: 0 18px;
     color: white;
     text-decoration: none;
-    transition: 0.3s;
     font-weight: 500;
-    font-size: 1.05rem;
 }
 
-nav a:hover { color: #c4b5fd; }
-
-/* HERO - MORE SPACE */
+/* HERO */
 header {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 120px;
+    padding-top: 90px;
 }
-
 
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: 50px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 20px;
 }
 
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-        gap: 30px;
-        padding: 20px;
-    }
-}
-
-
+/* LEFT */
 .hero-left {
     flex: 1;
     display: flex;
@@ -97,11 +86,6 @@ header {
     align-items: center;
 }
 
-.hero-right {
-    flex: 1;
-}
-
-/* BIGGER AVATAR */
 .avatar {
     width: clamp(220px, 30vw, 340px);
     height: clamp(220px, 30vw, 340px);
@@ -110,118 +94,102 @@ header {
     object-position: center;
 }
 
-* {
-    box-sizing: border-box;
+/* RIGHT */
+.hero-right {
+    flex: 1;
 }
 
 h1 {
-    font-size: 4.2rem;
+    font-size: 4rem;
     margin: 0;
 }
 
 .typing {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #ddd6fe;
     min-height: 40px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-    .hero-right p {
-        max-width: 90%;
-    }
+.hero-right p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 500px;
 }
 
+/* BUTTONS */
 .btn {
     display: inline-block;
-    padding: 14px 24px;
+    padding: 14px 22px;
     margin: 14px 10px 0 0;
     border-radius: 14px;
     background: linear-gradient(45deg, #818cf8, #c084fc);
     color: white;
     text-decoration: none;
     transition: 0.3s;
-    font-size: 1.05rem;
 }
 
 .btn:hover {
-    transform: scale(1.07);
+    transform: scale(1.05);
 }
 
+/* ICONS */
 .icons a {
-    margin-right: 14px;
+    margin-right: 12px;
     font-size: 1.6rem;
-    color: white;
 }
-
-.icons a:hover { color: #c4b5fd; }
 
 /* SECTIONS */
 section {
-    padding: 120px 20px;
-    max-width: 1100px;
+    padding: 100px 20px;
+    max-width: 1000px;
     margin: auto;
-}
-
-h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
 }
 
 .card {
     background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.15);
-    backdrop-filter: blur(20px);
-    padding: 26px;
-    border-radius: 22px;
-    margin-bottom: 22px;
-    transition: 0.4s;
+    padding: 22px;
+    border-radius: 18px;
+    margin-bottom: 18px;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-}
-
+/* SKILLS */
 .skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
 }
 
 .skill {
-    padding: 12px 16px;
-    border-radius: 12px;
+    padding: 10px 14px;
     background: rgba(255,255,255,0.1);
-    font-size: 1rem;
+    border-radius: 10px;
 }
 
-.hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+/* FOOTER */
 footer {
     text-align: center;
-    padding: 60px;
+    padding: 50px;
 }
 
-@media (max-width: 900px) {
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
     .hero {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
-        padding: 40px;
     }
 
-    .avatar {
-        width: 240px;
-        height: 240px;
+    .hero-right p {
+        max-width: 90%;
+        margin: auto;
+    }
+
+    nav {
+        padding: 14px;
+    }
+
+    h1 {
+        font-size: 3rem;
     }
 }
-
