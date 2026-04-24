@@ -30,9 +30,11 @@ body {
     position: fixed;
     width: 600px;
     height: 600px;
-    background: rgba(255,255,255,0.08);
+    /* Увеличиваем непрозрачность с 0.08 до 0.25 (или даже 0.4, если нужно ярче) */
+    background: rgba(255, 255, 255, 0.25); 
     border-radius: 50%;
-    filter: blur(120px);
+    /* Чуть-чуть уменьшаем размытие, чтобы пятно лучше читалось */
+    filter: blur(100px); 
     z-index: -2;
 }
 .blob1 { top: -100px; left: -100px; }
