@@ -38,31 +38,49 @@ body {
 .blob2 { bottom: -120px; right: -120px; }
 
 /* HEADER NAV (GLASS SAAS STYLE) */
-
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    backdrop-filter: blur(18px);
+    background: rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     z-index: 1000;
 }
 
-.nav-container {
-    width: 90%;
-    max-width: 1200px;
+.nav-left {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 
+.nav-center {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 28px;
+}
 
-    padding: 16px 28px;
-    margin-top: 12px;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: 0.3s;
+}
+nav a:hover { opacity: 1; color: #ddd6fe; }
 
-    backdrop-filter: blur(18px);
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 16px;
+.nav-right a {
+    padding: 10px 16px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.12);
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+.nav-right a:hover {
+    background: rgba(255,255,255,0.2);
 }
 
 /* HERO FULL LAYOUT */
