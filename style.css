@@ -15,7 +15,7 @@ body {
     inset: 0;
     background: linear-gradient(120deg, #6366f1, #a855f7, #60a5fa);
     background-size: 250% 250%;
-    animation: gradientMove 8s ease infinite;
+    animation: gradientMove 6s ease infinite;
     z-index: -3;
 }
 
@@ -35,16 +35,26 @@ body {
 /* BLOBS */
 .blob {
     position: fixed;
-    width: 600px;
-    height: 600px;
-    background: rgba(255,255,255,0.08);
+    width: 700px;
+    height: 700px;
+    background: rgba(255, 255, 255, 0.14);
     border-radius: 50%;
-    filter: blur(120px);
+    filter: blur(140px);
     z-index: -2;
+    opacity: 0.9;
 }
 
-.blob1 { top: -10%; left: -10%; }
-.blob2 { bottom: -10%; right: -10%; }
+.blob1 {
+    top: -15%;
+    left: -15%;
+    background: rgba(168, 85, 247, 0.22);
+}
+
+.blob2 {
+    bottom: -15%;
+    right: -15%;
+    background: rgba(96, 165, 250, 0.22);
+}
 
 /* NAV */
 nav {
@@ -162,13 +172,14 @@ h1 {
 
 /* ICONS */
 .icons a {
-    font-size: 2rem;
-    margin-right: 14px;
-    transition: 0.3s;
+    font-size: 2.4rem;
+    margin-right: 16px;
+    transition: 0.25s ease;
+    display: inline-block;
 }
 
 .icons a:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px) scale(1.1);
 }
 
 /* SECTIONS */
