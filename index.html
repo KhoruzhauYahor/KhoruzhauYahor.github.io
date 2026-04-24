@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Egor | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    z-index: 1000;
+}
+
+nav a {
+    color: #e2e8f0;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #94a3b8;
+}
+
+section {
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill {
+    background: #334155;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #64748b;
+}
+
+/* Анимации */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<header>
+    <div class="hidden">
+        <h1>Egor</h1>
+        <p>Junior Developer / Designer</p>
+    </div>
+</header>
+
+<section id="about" class="hidden">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>
+            I am a student and aspiring developer with experience in Android development,
+            design, and data analysis. Passionate about creating modern digital products.
+        </p>
+    </div>
+</section>
+
+<section id="skills" class="hidden">
+    <h2>Skills</h2>
+    <div class="skills">
+        <div class="skill">Kotlin</div>
+        <div class="skill">Android</div>
+        <div class="skill">Figma</div>
+        <div class="skill">Photoshop</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Power BI</div>
+    </div>
+</section>
+
+<section id="projects" class="hidden">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>Android App</h3>
+        <p>Simple mobile app using Kotlin and XML layouts.</p>
+    </div>
+
+    <div class="card">
+        <h3>Design Portfolio</h3>
+        <p>UI/UX projects created in Figma and Adobe tools.</p>
+    </div>
+
+</section>
+
+<section id="contact" class="hidden">
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email: your@email.com</p>
+        <p>GitHub: github.com/username</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Egor
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
