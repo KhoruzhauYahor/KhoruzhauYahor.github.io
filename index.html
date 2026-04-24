@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yahor Khoruzhau | Data Analyst</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahor Khoruzhau | Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-    
 <body>
 
 <div class="background"></div>
@@ -16,94 +15,168 @@
 
 <nav>
     <div class="nav-left">YK</div>
-
     <div class="nav-center">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
     </div>
     <div class="nav-right">
-        <a href="#">Contact</a>
+        <a href="mailto:khoruzhau.yahor@gmail.com">Contact</a>
     </div>
 </nav>
 
 <header>
-<div class="hero hidden">
-
-    <div class="hero-left">
-        <img src="picture4.png" class="avatar">
-    </div>
-
-    <div class="hero-right">
-        <div class="small-title">HELLO, I'M</div>
-        <h1>Egor</h1>
-
-        <div class="typing" id="typing"></div>
-
-        <div class="description">
-            Data Analyst focused on transforming raw data into insights using SQL, Power BI and visualization.
+    <div class="hero hidden">
+        <div class="hero-left">
+            <img src="picture4.png" alt="Yahor Khoruzhau" class="avatar">
         </div>
-
-        <a href="#" class="btn">Download CV</a>
-        <a href="#projects" class="btn">Projects</a>
-
-        <div class="icons">
-            <a href="https://github.com/KhoruzhauYahor">🐙</a>
-            <a href="#">💼</a>
-            <a href="#">📊</a>
+        <div class="hero-right">
+            <div class="small-title">HELLO, I'M</div>
+            <h1>Yahor</h1>
+            <div class="typing" id="typing"></div>
+            <div class="description">
+                Data Analyst with IT Bachelor's degree (5/5 grade). Specialized in SQL, Power BI, and ERP systems. 
+                Passionate about automating financial reporting and turning complex data into strategic insights.
+            </div>
+            <div class="cta-btns">
+                <a href="cv.pdf" class="btn" download>Download CV</a>
+                <a href="#projects" class="btn btn-outline">Projects</a>
+            </div>
+            <div class="icons">
+                <a href="https://github.com/KhoruzhauYahor" title="GitHub">🐙</a>
+                <a href="https://linkedin.com/in/your-profile" title="LinkedIn">💼</a>
+                <a href="tel:+48690118857" title="Phone">📞</a>
+            </div>
         </div>
     </div>
-
-</div>
 </header>
 
 <section id="about" class="hidden">
-<h2>About Me</h2>
-<div class="card">Aspiring Data Analyst with SQL, Power BI and data visualization skills.</div>
+    <h2>About & Education</h2>
+    <div class="card">
+        <div class="exp-header">
+            <div class="exp-title">
+                <h4>Bachelor of Information Technologies</h4>
+                <div class="exp-company">WSB Merito University in Wroclaw</div>
+            </div>
+            <span class="exp-date">2022 - 2025</span>
+        </div>
+        <p>Graduated with a <strong>grade of 5/5</strong>. Recipient of a full tuition grant via "Study in Wroclaw".</p>
+        <p>🏆 <strong>Achievement:</strong> Winner Certificate of the international competition in informatics (Vilnius University).</p>
+    </div>
 </section>
 
 <section id="skills" class="hidden">
-<h2>Skills</h2>
-<div class="skills">
-<div class="skill">SQL</div>
-<div class="skill">Power BI</div>
-<div class="skill">Python</div>
-<div class="skill">Excel</div>
-</div>
+    <h2>Technical Stack</h2>
+    <div class="skills-container">
+        <div class="skill-group">
+            <h3>Data & Analytics</h3>
+            <div class="skills-list">
+                <span class="skill-tag">SQL (MS SQL Server)</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">Excel [Pivot, VLOOKUP]</span>
+                <span class="skill-tag">Python</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h3>ERP & Business</h3>
+            <div class="skills-list">
+                <span class="skill-tag">SAP R/3</span>
+                <span class="skill-tag">MS Business Central (BC)</span>
+                <span class="skill-tag">Navision</span>
+                <span class="skill-tag">Microsoft Azure</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h3>Languages</h3>
+            <div class="skills-list">
+                <span class="skill-tag">English (C1)</span>
+                <span class="skill-tag">Polish (B2)</span>
+                <span class="skill-tag">Russian (Native)</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="hidden">
+    <h2>Work Experience</h2>
+    
+    <div class="card">
+        <div class="exp-header">
+            <div class="exp-title">
+                <h4>Data Analyst Intern</h4>
+                <div class="exp-company">TKD Kabel GmbH | Nettetal, Germany</div>
+            </div>
+            <span class="exp-date">June 2025 - Sept 2025</span>
+        </div>
+        <div class="exp-content">
+            <ul>
+                <li>Optimized data management processes in Navision and Business Central.</li>
+                <li>Implemented SQL-based analysis for financial reporting automation.</li>
+                <li>Performed data validation and quality control for product data.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="exp-header">
+            <div class="exp-title">
+                <h4>Junior IT Specialist</h4>
+                <div class="exp-company">Manufaktura Pizzy i Chleba | Poland</div>
+            </div>
+            <span class="exp-date">April 2023 - June 2025</span>
+        </div>
+        <div class="exp-content">
+            <ul>
+                <li>Developed a relational database using SQL for sales performance tracking.</li>
+                <li>Collaborated on a Power BI implementation project, delivered ahead of schedule.</li>
+                <li>Created functional specifications and test scripts for financial modules.</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <section id="projects" class="hidden">
-<h2>Projects</h2>
-<div class="card">Sales Dashboard - Power BI</div>
-<div class="card">SQL Data Analysis</div>
+    <h2>Projects</h2>
+    <div class="card">
+        <h4>Sales Dashboard - Power BI</h4>
+        <p>Comprehensive visualization of KPIs and sales trends.</p>
+    </div>
+    <div class="card">
+        <h4>SQL Data Analysis</h4>
+        <p>Complex queries for financial reporting and data cleaning.</p>
+    </div>
 </section>
 
-<footer>© 2026 Egor</footer>
+<footer>© 2026 Yahor Khoruzhau • Data Analyst</footer>
 
 <script>
-const text = ["Data Analyst", "SQL & Power BI", "Turning data into insights"];
-let i = 0, j = 0, isDeleting = false;
+    // Печатающийся текст
+    const text = ["Data Analyst", "SQL & Power BI Expert", "IT Graduate (5.0 GPA)", "Problem Solver"];
+    let i = 0, j = 0, isDeleting = false;
 
-function type() {
-    const el = document.getElementById("typing");
-    const current = text[i];
-
-    if (!isDeleting) {
-        el.textContent = current.substring(0, j++);
-        if (j > current.length) { isDeleting = true; setTimeout(type, 1000); return; }
-    } else {
-        el.textContent = current.substring(0, j--);
-        if (j === 0) { isDeleting = false; i = (i + 1) % text.length; }
+    function type() {
+        const el = document.getElementById("typing");
+        if(!el) return;
+        const current = text[i];
+        if (!isDeleting) {
+            el.textContent = current.substring(0, j++);
+            if (j > current.length) { isDeleting = true; setTimeout(type, 1500); return; }
+        } else {
+            el.textContent = current.substring(0, j--);
+            if (j === 0) { isDeleting = false; i = (i + 1) % text.length; }
+        }
+        setTimeout(type, isDeleting ? 40 : 80);
     }
-    setTimeout(type, isDeleting ? 40 : 80);
-}
+    type();
 
-type();
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
-});
-document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+    // Анимация появления при скролле
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 </script>
 
 </body>
