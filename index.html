@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yahor Khoruzhau | Data Analyst</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 html { scroll-behavior: smooth; }
@@ -13,7 +13,7 @@ html { scroll-behavior: smooth; }
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    color: #e2e8f0;
+    color: #eef2ff;
     overflow-x: hidden;
 }
 
@@ -33,62 +33,82 @@ body {
     100% {background-position: 0% 50%;}
 }
 
-/* BLOBS */
+/* BLUR BLOBS */
 .blob {
     position: fixed;
-    width: 520px;
-    height: 520px;
+    width: 600px;
+    height: 600px;
     background: rgba(255,255,255,0.08);
     border-radius: 50%;
-    filter: blur(110px);
+    filter: blur(120px);
     z-index: -2;
 }
+.blob1 { top: -100px; left: -100px; }
+.blob2 { bottom: -120px; right: -120px; }
 
-.blob1 { top: 5%; left: 5%; }
-.blob2 { bottom: 5%; right: 5%; }
-
-/* NAV - BIGGER HEADER */
+/* HEADER NAV (GLASS SAAS STYLE) */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: center;
-    padding: 26px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
     backdrop-filter: blur(18px);
-    background: rgba(255,255,255,0.08);
-    z-index: 1000;
+    background: rgba(255,255,255,0.06);
     border-bottom: 1px solid rgba(255,255,255,0.08);
+    z-index: 1000;
+}
+
+.nav-left {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-center {
+    display: flex;
+    gap: 28px;
 }
 
 nav a {
-    margin: 0 22px;
     color: white;
     text-decoration: none;
-    transition: 0.3s;
     font-weight: 500;
-    font-size: 1.05rem;
+    opacity: 0.85;
+    transition: 0.3s;
+}
+nav a:hover { opacity: 1; color: #ddd6fe; }
+
+.nav-right a {
+    padding: 10px 16px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.12);
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+.nav-right a:hover {
+    background: rgba(255,255,255,0.2);
 }
 
-nav a:hover { color: #c4b5fd; }
-
-/* HERO - MORE SPACE */
+/* HERO FULL LAYOUT */
 header {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 120px;
+    padding-top: 90px;
 }
 
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 120px;
     max-width: 1300px;
     width: 100%;
     padding: 80px;
+    gap: 100px;
 }
 
 .hero-left {
@@ -101,83 +121,80 @@ header {
     flex: 1;
 }
 
-/* BIGGER AVATAR */
 .avatar {
-    width: 340px;
-    height: 340px;
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(255,255,255,0.35);
-    backdrop-filter: blur(10px);
+    border: 4px solid rgba(255,255,255,0.3);
+    box-shadow: 0 20px 80px rgba(0,0,0,0.3);
+}
+
+.small-title {
+    letter-spacing: 3px;
+    opacity: 0.8;
+    text-transform: uppercase;
 }
 
 h1 {
-    font-size: 4.2rem;
-    margin: 0;
+    font-size: 5rem;
+    margin: 10px 0;
 }
 
 .typing {
-    font-size: 1.8rem;
-    color: #ddd6fe;
+    font-size: 1.6rem;
+    color: #e0e7ff;
     min-height: 40px;
+}
+
+.description {
+    max-width: 520px;
+    opacity: 0.85;
     margin-top: 12px;
+    line-height: 1.5;
 }
 
-.hero-right p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    max-width: 500px;
-}
-
-/* BUTTONS BIGGER */
+/* BUTTONS */
 .btn {
     display: inline-block;
-    padding: 14px 24px;
-    margin: 14px 10px 0 0;
+    padding: 14px 22px;
+    margin: 18px 10px 0 0;
     border-radius: 14px;
     background: linear-gradient(45deg, #818cf8, #c084fc);
     color: white;
     text-decoration: none;
     transition: 0.3s;
-    font-size: 1.05rem;
+    font-weight: 500;
 }
+.btn:hover { transform: scale(1.05); }
 
-.btn:hover {
-    transform: scale(1.07);
+.icons {
+    margin-top: 20px;
 }
-
 .icons a {
     margin-right: 14px;
     font-size: 1.6rem;
     color: white;
+    opacity: 0.9;
 }
-
-.icons a:hover { color: #c4b5fd; }
+.icons a:hover { opacity: 1; }
 
 /* SECTIONS */
 section {
     padding: 120px 20px;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: auto;
 }
 
-h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-}
+h2 { font-size: 2.4rem; }
 
 .card {
     background: rgba(255,255,255,0.08);
     border: 1px solid rgba(255,255,255,0.15);
     backdrop-filter: blur(20px);
-    padding: 26px;
-    border-radius: 22px;
-    margin-bottom: 22px;
-    transition: 0.4s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
+    padding: 24px;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 .skills {
@@ -185,42 +202,20 @@ h2 {
     flex-wrap: wrap;
     gap: 12px;
 }
-
 .skill {
     padding: 12px 16px;
-    border-radius: 12px;
     background: rgba(255,255,255,0.1);
-    font-size: 1rem;
+    border-radius: 12px;
 }
 
-.hidden {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8s;
-}
+.hidden { opacity: 0; transform: translateY(40px); transition: 0.8s; }
+.show { opacity: 1; transform: translateY(0); }
 
-.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-footer {
-    text-align: center;
-    padding: 60px;
-}
+footer { text-align: center; padding: 60px; }
 
 @media (max-width: 900px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-        padding: 40px;
-    }
-
-    .avatar {
-        width: 240px;
-        height: 240px;
-    }
+    .hero { flex-direction: column; text-align: center; }
+    .avatar { width: 260px; height: 260px; }
 }
 </style>
 </head>
@@ -232,9 +227,17 @@ footer {
 <div class="blob blob2"></div>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
+    <div class="nav-left">YK</div>
+
+    <div class="nav-center">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="#">Contact</a>
+    </div>
 </nav>
 
 <header>
@@ -245,15 +248,17 @@ footer {
     </div>
 
     <div class="hero-right">
+        <div class="small-title">HELLO, I'M</div>
         <h1>Egor</h1>
+
         <div class="typing" id="typing"></div>
 
-        <p>Data Analyst focused on turning raw data into actionable insights through SQL, Power BI and visualization.</p>
-
-        <div>
-            <a href="#" class="btn">Download CV</a>
-            <a href="#projects" class="btn">Projects</a>
+        <div class="description">
+            Data Analyst focused on transforming raw data into insights using SQL, Power BI and visualization.
         </div>
+
+        <a href="#" class="btn">Download CV</a>
+        <a href="#projects" class="btn">Projects</a>
 
         <div class="icons">
             <a href="https://github.com/KhoruzhauYahor">🐙</a>
@@ -267,9 +272,7 @@ footer {
 
 <section id="about" class="hidden">
 <h2>About Me</h2>
-<div class="card">
-<p>Aspiring Data Analyst with skills in SQL, Power BI and data visualization.</p>
-</div>
+<div class="card">Aspiring Data Analyst with SQL, Power BI and data visualization skills.</div>
 </section>
 
 <section id="skills" class="hidden">
@@ -277,22 +280,15 @@ footer {
 <div class="skills">
 <div class="skill">SQL</div>
 <div class="skill">Power BI</div>
-<div class="skill">Excel</div>
 <div class="skill">Python</div>
-<div class="skill">Data Visualization</div>
+<div class="skill">Excel</div>
 </div>
 </section>
 
 <section id="projects" class="hidden">
 <h2>Projects</h2>
-<div class="card">
-<h3>Sales Dashboard</h3>
-<p>Interactive dashboard built in Power BI</p>
-</div>
-<div class="card">
-<h3>SQL Analysis</h3>
-<p>Database analysis and reporting</p>
-</div>
+<div class="card">Sales Dashboard - Power BI</div>
+<div class="card">SQL Data Analysis</div>
 </section>
 
 <footer>© 2026 Egor</footer>
@@ -307,30 +303,19 @@ function type() {
 
     if (!isDeleting) {
         el.textContent = current.substring(0, j++);
-        if (j > current.length) {
-            isDeleting = true;
-            setTimeout(type, 1000);
-            return;
-        }
+        if (j > current.length) { isDeleting = true; setTimeout(type, 1000); return; }
     } else {
         el.textContent = current.substring(0, j--);
-        if (j === 0) {
-            isDeleting = false;
-            i = (i + 1) % text.length;
-        }
+        if (j === 0) { isDeleting = false; i = (i + 1) % text.length; }
     }
-
     setTimeout(type, isDeleting ? 40 : 80);
 }
 
 type();
 
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if (e.isIntersecting) e.target.classList.add("show");
-    });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
 });
-
 document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 </script>
 
