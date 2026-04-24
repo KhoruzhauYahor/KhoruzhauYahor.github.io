@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yahor Khoruzhau | Data Analyst</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahor Khoruzhau | Data Analyst</title>
 
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+    
 <div class="background"></div>
 <div class="blob blob1"></div>
 <div class="blob blob2"></div>
@@ -25,25 +26,20 @@
     <div class="hero">
 
         <div class="hero-left">
-            <div class="avatar-wrapper">
-                <img src="picture4.png" class="avatar">
-            </div>
+            <img src="picture4.png" class="avatar" alt="avatar">
         </div>
 
-       <div class="hero-right">
-    <div class="pretitle">Hi, my name is</div>
-
-    <h1>Egor</h1>
-
-    <div class="typing" id="typing"></div>
+        <div class="hero-right">
+            <h1>Egor</h1>
+            <div class="typing" id="typing"></div>
 
             <p>
                 Data Analyst focused on turning raw data into actionable insights through SQL, Power BI and visualization.
             </p>
 
-            <div class="buttons">
+            <div>
                 <a href="#" class="btn">Download CV</a>
-                <a href="#projects" class="btn secondary">Projects</a>
+                <a href="#projects" class="btn">Projects</a>
             </div>
 
             <div class="icons">
@@ -59,7 +55,7 @@
 <section id="about">
     <h2>About Me</h2>
     <div class="card">
-        <p>Aspiring Data Analyst with strong focus on SQL, Power BI and storytelling.</p>
+        <p>Aspiring Data Analyst with skills in SQL, Power BI and data visualization.</p>
     </div>
 </section>
 
@@ -70,6 +66,7 @@
         <div class="skill">Power BI</div>
         <div class="skill">Excel</div>
         <div class="skill">Python</div>
+        <div class="skill">Data Visualization</div>
     </div>
 </section>
 
@@ -78,12 +75,12 @@
 
     <div class="card">
         <h3>Sales Dashboard</h3>
-        <p>Power BI interactive dashboard</p>
+        <p>Interactive dashboard built in Power BI</p>
     </div>
 
     <div class="card">
         <h3>SQL Analysis</h3>
-        <p>Database reporting and insights</p>
+        <p>Database analysis and reporting</p>
     </div>
 </section>
 
@@ -91,43 +88,31 @@
 
 <script>
 const text = ["Data Analyst", "SQL & Power BI", "Turning data into insights"];
-let i = 0, j = 0, del = false;
+let i = 0, j = 0, isDeleting = false;
 
 function type() {
     const el = document.getElementById("typing");
     const current = text[i];
 
-    el.textContent = current.substring(0, j);
-
-    if (!del) {
-        j++;
+    if (!isDeleting) {
+        el.textContent = current.substring(0, j++);
         if (j > current.length) {
-            del = true;
+            isDeleting = true;
             setTimeout(type, 1000);
             return;
         }
     } else {
-        j--;
+        el.textContent = current.substring(0, j--);
         if (j === 0) {
-            del = false;
+            isDeleting = false;
             i = (i + 1) % text.length;
         }
     }
 
-    setTimeout(type, del ? 40 : 70);
+    setTimeout(type, isDeleting ? 40 : 80);
 }
+
 type();
-
-/* parallax blobs */
-window.addEventListener("scroll", () => {
-    let v = window.scrollY;
-
-    document.querySelector(".blob1").style.transform =
-        `translate(${v * 0.05}px, ${v * 0.03}px)`;
-
-    document.querySelector(".blob2").style.transform =
-        `translate(${-v * 0.05}px, ${-v * 0.03}px)`;
-});
 </script>
 
 </body>
