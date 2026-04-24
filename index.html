@@ -15,8 +15,7 @@
 <div class="blob blob1"></div>
 <div class="blob blob2"></div>
 
-<div class="cursor-glow"></div>
-
+<!-- 🧊 GLASS NAV -->
 <nav class="glass-nav">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -44,12 +43,6 @@
                 <a href="#" class="btn">Download CV</a>
                 <a href="#projects" class="btn secondary">Projects</a>
             </div>
-
-            <div class="icons">
-                <a href="#">🐙</a>
-                <a href="#">💼</a>
-                <a href="#">📊</a>
-            </div>
         </div>
 
     </div>
@@ -58,7 +51,7 @@
 <section id="about">
     <h2>About Me</h2>
     <div class="card">
-        <p>Aspiring Data Analyst with strong focus on storytelling and dashboards.</p>
+        <p>Aspiring Data Analyst with focus on dashboards and storytelling.</p>
     </div>
 </section>
 
@@ -76,14 +69,14 @@
     <h2>Projects</h2>
     <div class="card">
         <h3>Sales Dashboard</h3>
-        <p>Power BI interactive analytics dashboard</p>
+        <p>Power BI analytics dashboard</p>
     </div>
 </section>
 
 <footer>© 2026 Egor</footer>
 
 <script>
-/* ===== TYPING ===== */
+/* ===== typing ===== */
 const text = ["Data Analyst", "SQL & Power BI", "Turning data into insights"];
 let i = 0, j = 0, del = false;
 
@@ -112,23 +105,15 @@ function type() {
 }
 type();
 
-/* ===== PARALLAX SCROLL ===== */
+/* ===== PARALLAX ===== */
 window.addEventListener("scroll", () => {
-    let value = window.scrollY;
+    const v = window.scrollY;
 
     document.querySelector(".blob1").style.transform =
-        `translate(${value * 0.05}px, ${value * 0.03}px)`;
+        `translate(${v * 0.05}px, ${v * 0.03}px)`;
 
     document.querySelector(".blob2").style.transform =
-        `translate(${-value * 0.05}px, ${-value * 0.03}px)`;
-});
-
-/* ===== CURSOR GLOW ===== */
-const glow = document.querySelector(".cursor-glow");
-
-document.addEventListener("mousemove", (e) => {
-    glow.style.left = e.clientX + "px";
-    glow.style.top = e.clientY + "px";
+        `translate(${-v * 0.05}px, ${-v * 0.03}px)`;
 });
 </script>
 
