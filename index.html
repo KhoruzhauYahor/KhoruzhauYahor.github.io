@@ -14,107 +14,111 @@
 <div class="background"></div>
 <div class="blob blob1"></div>
 <div class="blob blob2"></div>
-    
-<nav class="glass-nav">
+
+<nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
 </nav>
 
 <header>
-    <div class="hero">
+<div class="hero hidden">
 
-        <div class="hero-left">
-            <div class="avatar-wrapper">
-                <img src="picture4.png" class="avatar">
-            </div>
-        </div>
-
-        <div class="hero-right">
-            <h1>Egor</h1>
-            <div class="typing" id="typing"></div>
-
-            <p>
-                Data Analyst focused on transforming raw data into insights using SQL, Power BI and visualization.
-            </p>
-
-            <div class="cta">
-                <a href="#" class="btn">Download CV</a>
-                <a href="#projects" class="btn secondary">Projects</a>
-            </div>
-        </div>
-
+    <div class="hero-left">
+        <img src="cv_picture2.png" class="avatar">
     </div>
+
+    <div class="hero-right">
+        <h1>Egor</h1>
+        <div class="typing" id="typing"></div>
+
+        <p>Data Analyst focused on turning raw data into actionable insights through SQL, Power BI and visualization.</p>
+
+        <div>
+            <a href="#" class="btn">Download CV</a>
+            <a href="#projects" class="btn">Projects</a>
+        </div>
+
+        <div class="icons">
+            <a href="https://github.com/KhoruzhauYahor">🐙</a>
+            <a href="#">💼</a>
+            <a href="#">📊</a>
+        </div>
+    </div>
+
+</div>
 </header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <div class="card">
-        <p>Aspiring Data Analyst with focus on dashboards and storytelling.</p>
-    </div>
+<section id="about" class="hidden">
+<h2>About Me</h2>
+<div class="card">
+<p>Aspiring Data Analyst with skills in SQL, Power BI and data visualization.</p>
+</div>
 </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-        <div class="skill">SQL</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Excel</div>
-        <div class="skill">Python</div>
-    </div>
+<section id="skills" class="hidden">
+<h2>Skills</h2>
+<div class="skills">
+<div class="skill">SQL</div>
+<div class="skill">Power BI</div>
+<div class="skill">Excel</div>
+<div class="skill">Python</div>
+<div class="skill">Data Visualization</div>
+</div>
 </section>
 
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-        <h3>Sales Dashboard</h3>
-        <p>Power BI analytics dashboard</p>
-    </div>
+<section id="projects" class="hidden">
+<h2>Projects</h2>
+<div class="card">
+<h3>Sales Dashboard</h3>
+<p>Interactive dashboard built in Power BI</p>
+</div>
+<div class="card">
+<h3>SQL Analysis</h3>
+<p>Database analysis and reporting</p>
+</div>
 </section>
 
 <footer>© 2026 Egor</footer>
 
 <script>
-/* ===== typing ===== */
 const text = ["Data Analyst", "SQL & Power BI", "Turning data into insights"];
-let i = 0, j = 0, del = false;
+let i = 0, j = 0, isDeleting = false;
 
 function type() {
     const el = document.getElementById("typing");
     const current = text[i];
 
-    el.textContent = current.substring(0, j);
-
-    if (!del) {
-        j++;
+    if (!isDeleting) {
+        el.textContent = current.substring(0, j++);
         if (j > current.length) {
-            del = true;
-            setTimeout(type, 1200);
+            isDeleting = true;
+            setTimeout(type, 1000);
             return;
         }
     } else {
-        j--;
+        el.textContent = current.substring(0, j--);
         if (j === 0) {
-            del = false;
+            isDeleting = false;
             i = (i + 1) % text.length;
         }
     }
 
-    setTimeout(type, del ? 40 : 70);
+    setTimeout(type, isDeleting ? 40 : 80);
 }
+
 type();
 
-
-window.addEventListener("scroll", () => {
-    const v = window.scrollY;
-
-    document.querySelector(".blob1").style.transform =
-        `translate(${v * 0.05}px, ${v * 0.03}px)`;
-
-    document.querySelector(".blob2").style.transform =
-        `translate(${-v * 0.05}px, ${-v * 0.03}px)`;
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("show");
+    });
 });
+
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 </script>
 
 </body>
 </html>
+
+
