@@ -9,15 +9,15 @@ body {
     overflow-x: hidden;
 }
 
+/* BACKGROUND */
 .background {
     position: fixed;
     inset: 0;
     background: linear-gradient(120deg, #6366f1, #a855f7, #60a5fa);
-    background-size: 300% 300%;
-    animation: gradientMove 12s ease infinite;
+    background-size: 250% 250%;
+    animation: gradientMove 8s ease infinite;
     z-index: -3;
 }
-
 
 @keyframes gradientMove {
     0% {background-position: 0% 50%;}
@@ -28,26 +28,27 @@ body {
 /* BLOBS */
 .blob {
     position: fixed;
-    width: 520px;
-    height: 520px;
+    width: 600px;
+    height: 600px;
     background: rgba(255,255,255,0.08);
     border-radius: 50%;
-    filter: blur(110px);
+    filter: blur(120px);
     z-index: -2;
 }
 
-.blob1 { top: 5%; left: 5%; }
-.blob2 { bottom: 5%; right: 5%; }
+.blob1 { top: -10%; left: -10%; }
+.blob2 { bottom: -10%; right: -10%; }
 
+/* NAV */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 22px;
-    backdrop-filter: blur(18px);
-    background: rgba(255,255,255,0.08);
+    padding: 18px;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.06);
     z-index: 1000;
 }
 
@@ -55,7 +56,6 @@ nav a {
     margin: 0 18px;
     color: white;
     text-decoration: none;
-    font-weight: 500;
 }
 
 /* HERO */
@@ -64,92 +64,116 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 90px;
+    padding-top: 80px;
 }
 
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 80px;
     max-width: 1100px;
     width: 100%;
     padding: 20px;
 }
 
-/* LEFT */
+/* AVATAR */
 .hero-left {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 360px;
+    height: 360px;
+}
+
+/* OUTER GLOW */
+.avatar-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -35px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,85,247,0.6), transparent 70%);
+    filter: blur(35px);
+    z-index: -1;
 }
 
 .avatar {
-    width: clamp(220px, 30vw, 340px);
-    height: clamp(220px, 30vw, 340px);
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center;
 }
 
-/* RIGHT */
+/* TEXT */
 .hero-right {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 5.2rem;
     margin: 0;
+    font-weight: 700;
 }
 
 .typing {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
     color: #ddd6fe;
-    min-height: 40px;
-    margin-top: 10px;
+    min-height: 50px;
 }
 
 .hero-right p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    max-width: 500px;
+    font-size: 1.25rem;
+    max-width: 540px;
+    line-height: 1.6;
 }
 
 /* BUTTONS */
+.buttons {
+    margin-top: 10px;
+}
+
 .btn {
     display: inline-block;
-    padding: 14px 22px;
-    margin: 14px 10px 0 0;
+    padding: 16px 24px;
     border-radius: 14px;
     background: linear-gradient(45deg, #818cf8, #c084fc);
     color: white;
     text-decoration: none;
-    transition: 0.3s;
+    margin-right: 10px;
 }
 
-.btn:hover {
-    transform: scale(1.05);
+.btn.secondary {
+    background: rgba(255,255,255,0.1);
 }
 
 /* ICONS */
-.icons a {
-    margin-right: 12px;
-    font-size: 1.6rem;
+.icons {
+    margin-top: 10px;
 }
 
 /* SECTIONS */
 section {
-    padding: 100px 20px;
+    padding: 120px 20px;
     max-width: 1000px;
     margin: auto;
+}
+
+h2 {
+    font-size: 2.6rem;
 }
 
 .card {
     background: rgba(255,255,255,0.08);
     padding: 22px;
     border-radius: 18px;
-    margin-bottom: 18px;
+    backdrop-filter: blur(20px);
 }
 
 /* SKILLS */
@@ -165,30 +189,25 @@ section {
     border-radius: 10px;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 50px;
-}
-
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 768px) {
-
     .hero {
         flex-direction: column;
         text-align: center;
+        gap: 40px;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    .avatar-wrapper {
+        width: 240px;
+        height: 240px;
     }
 
     .hero-right p {
         max-width: 90%;
         margin: auto;
-    }
-
-    nav {
-        padding: 14px;
-    }
-
-    h1 {
-        font-size: 3rem;
     }
 }
