@@ -10,12 +10,16 @@
 </head>
 
 <body>
-    
+
 <div class="background"></div>
 <div class="blob blob1"></div>
 <div class="blob blob2"></div>
 
-<nav>
+<!-- 🟣 MOUSE GLOW -->
+<div class="cursor-glow"></div>
+
+<!-- 🧊 GLASS HEADER -->
+<nav class="glass-nav">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
@@ -32,7 +36,6 @@
 
         <div class="hero-right">
             <h1>Egor</h1>
-
             <div class="typing" id="typing"></div>
 
             <p>
@@ -45,7 +48,7 @@
             </div>
 
             <div class="icons">
-                <a href="https://github.com">🐙</a>
+                <a href="#">🐙</a>
                 <a href="#">💼</a>
                 <a href="#">📊</a>
             </div>
@@ -57,7 +60,7 @@
 <section id="about">
     <h2>About Me</h2>
     <div class="card">
-        <p>Aspiring Data Analyst with strong interest in SQL, Power BI and data storytelling.</p>
+        <p>Aspiring Data Analyst with strong focus on storytelling and dashboards.</p>
     </div>
 </section>
 
@@ -68,29 +71,23 @@
         <div class="skill">Power BI</div>
         <div class="skill">Excel</div>
         <div class="skill">Python</div>
-        <div class="skill">Data Visualization</div>
     </div>
 </section>
 
 <section id="projects">
     <h2>Projects</h2>
-
     <div class="card">
         <h3>Sales Dashboard</h3>
-        <p>Interactive Power BI dashboard for sales analysis</p>
-    </div>
-
-    <div class="card">
-        <h3>SQL Analysis</h3>
-        <p>Database querying and reporting system</p>
+        <p>Power BI interactive analytics dashboard</p>
     </div>
 </section>
 
 <footer>© 2026 Egor</footer>
 
 <script>
+/* ===== TYPING ===== */
 const text = ["Data Analyst", "SQL & Power BI", "Turning data into insights"];
-let i = 0, j = 0, isDeleting = false;
+let i = 0, j = 0, del = false;
 
 function type() {
     const el = document.getElementById("typing");
@@ -98,24 +95,43 @@ function type() {
 
     el.textContent = current.substring(0, j);
 
-    if (!isDeleting) {
+    if (!del) {
         j++;
         if (j > current.length) {
-            isDeleting = true;
+            del = true;
             setTimeout(type, 1200);
             return;
         }
     } else {
         j--;
         if (j === 0) {
-            isDeleting = false;
+            del = false;
             i = (i + 1) % text.length;
         }
     }
 
-    setTimeout(type, isDeleting ? 40 : 70);
+    setTimeout(type, del ? 40 : 70);
 }
 type();
+
+/* ===== PARALLAX SCROLL ===== */
+window.addEventListener("scroll", () => {
+    let value = window.scrollY;
+
+    document.querySelector(".blob1").style.transform =
+        `translate(${value * 0.05}px, ${value * 0.03}px)`;
+
+    document.querySelector(".blob2").style.transform =
+        `translate(${-value * 0.05}px, ${-value * 0.03}px)`;
+});
+
+/* ===== CURSOR GLOW ===== */
+const glow = document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove", (e) => {
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+});
 </script>
 
 </body>
