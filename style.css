@@ -71,15 +71,21 @@ header {
     padding-top: 120px;
 }
 
+
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 120px;
-    max-width: 1300px;
-    width: 100%;
-    padding: 80px;
+    gap: 40px;
 }
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 
 .hero-left {
     flex: 1;
