@@ -1,6 +1,6 @@
-/* 1. ОБЩИЕ НАСТРОЙКИ */
+
 * {
-    box-sizing: border-box; /* Чтобы padding не раздувал элементы */
+    box-sizing: border-box; 
 }
 
 html { 
@@ -15,7 +15,14 @@ body {
     background-color: #6366f1; /* Запасной цвет фона */
 }
 
-/* 2. ФОН И АНИМИРОВАННЫЕ ПЯТНА (BLOBS) */
+.icons {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: 0.3s; 
+}
+
 .background {
     position: fixed;
     inset: 0;
